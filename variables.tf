@@ -48,7 +48,7 @@ variable "kibana_whitelist" {
   default     = ["0.0.0.0/0"]
 }
 
-variable "count" {
+variable "number_of_instance" {
   description = "Instance count"
   default     = 1
 }

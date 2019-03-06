@@ -11,5 +11,7 @@ resource "alicloud_elasticsearch_instance" "instance" {
   vswitch_id           = "${var.vswitch_id}"
   password             = "${var.password}"
   version              = "${var.version}"
-  count                = "${var.count}"
+  count                = "${var.number_of_instance}"
+  private_whitelist    = "${var.private_whitelist}"
+  kibana_whitelist     = "${var.kibana_whitelist}"
 }
