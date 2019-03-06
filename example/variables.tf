@@ -27,11 +27,11 @@ variable "version" {
 }
 
 variable "vswitch_id" {
-  default = "vcwitch id"
+  default = "vswitch id"
 }
 
 variable "password" {
-  default = "My@Test1Test"
+  default = "your password"
 }
 
 variable "private_whitelist" {
