@@ -39,13 +39,13 @@ variable "password" {
 variable "private_whitelist" {
   type        = "list"
   description = "Set the instance's IP whitelist in VPC network."
-  default     = ["0.0.0.0/0"]
+  default     = [""]
 }
 
 variable "kibana_whitelist" {
   type        = "list"
   description = "Set the Kibana's IP whitelist in internet network."
-  default     = ["0.0.0.0/0"]
+  default     = [""]
 }
 
 variable "number_of_instance" {
