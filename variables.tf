@@ -1,53 +1,54 @@
 variable "instance_charge_type" {
-  default = "PostPaid"
-}
-
-variable "description" {
-  default = "tf-testAccESResource"
+  description = "Valid values are PrePaid, PostPaid. Default to PostPaid"
+  default     = "PostPaid"
 }
 
 variable "period" {
-  default = "2"
+  description = "The duration that you will buy Elasticsearch instance (in month). It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36."
+  default     = "1"
 }
 
 variable "data_node_spec" {
-  default = "elasticsearch.sn2ne.large"
+  description = "The data node specifications of the Elasticsearch instance."
 }
 
 variable "data_node_amount" {
-  default = "3"
+  description = "The Elasticsearch cluster's data node quantity, between 2 and 50."
 }
 
 variable "data_node_disk_size" {
-  default = "20"
+  description = "The single data node storage space."
 }
 
 variable "data_node_disk_type" {
-  default = "cloud_ssd"
+  description = "The data node disk type. Supported values: cloud_ssd, cloud_efficiency."
 }
 
-variable "es_version" {
-  default = "6.3_with_X-Pack"
+variable "version" {
+  description = "Elasticsearch version. Supported values: 5.5.3_with_X-Pack and 6.3_with_X-Pack."
 }
 
 variable "vswitch_id" {
-  default = "vsw-uf6hser75qrlib5idurat"
+  description = "The ID of VSwitch."
 }
 
 variable "password" {
-  default = "MTest%12345"
+  description = "The password of the instance."
 }
 
 variable "private_whitelist" {
-  type    = "list"
-  default = ["10.1.0.0/16", "10.0.0.0/16"]
+  type        = "list"
+  description = "Set the instance's IP whitelist in VPC network."
+  default     = ["0.0.0.0/0"]
 }
 
 variable "kibana_whitelist" {
-  type    = "list"
-  default = ["10.1.0.0/16", "10.0.0.0/16", "127.0.0.1"]
+  type        = "list"
+  description = "Set the Kibana's IP whitelist in internet network."
+  default     = ["0.0.0.0/0"]
 }
 
-variable "master_node_spec" {
-  default = "elasticsearch.sn2ne.xlarge"
+variable "count" {
+  description = "Instance count"
+  default     = 1
 }

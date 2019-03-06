@@ -15,7 +15,8 @@ You can use this in your terraform template with the following steps.
 
 1. Adding a module resource to your template, e.g. main.tf
 
-         module "elasticsearch_instance" {
+        resource "alicloud_elasticsearch_instance" "instance" {
+            count                = 2
             source               = "alibaba/elasticsearch/alicloud"
             vswitch_id           = "vsw-012345678abcdef"
             instance_charge_type = "PostPaid"
@@ -24,8 +25,8 @@ You can use this in your terraform template with the following steps.
             data_node_disk_size  = "20"
             data_node_disk_type  = "cloud_ssd"
             password             = "PasswordGmail@"
-            es_version           = "5.5.3_with_X-Pack"
-         }
+            version              = "5.5.3_with_X-Pack"
+        }
 
 2. Setting values for the following variables through environment variables:
 
