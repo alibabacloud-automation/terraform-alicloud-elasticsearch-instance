@@ -50,7 +50,7 @@ You can use this in your terraform template with the following steps.
 |es_version           |  Elasticsearch version. Supported values: `5.5.3_with_X-Pack` and `6.3_with_X-Pack`.  |   string  |    ""   |    yes       |
 |private_whitelist    |  Set the instance's IP whitelist in VPC network.  |   list  |    ["0.0.0.0/0"]   |    no       |
 |kibana_whitelist     |  Set the Kibana's IP whitelist in internet network.  |   list  |    ["0.0.0.0/0"]   |    no       |
-|master_node_spec     |  The dedicated master node spec. If specified, dedicated master node will be created.  |   string  |    1   |    no       |
+|master_node_spec     |  The dedicated master node spec. If specified, dedicated master node will be created.  |   string  |    ""   |    no       |
 |number_of_instance   |  The amount of the Elasticsearch instances.  |   int  |    1   |    no       |
 
 ## Outputs
