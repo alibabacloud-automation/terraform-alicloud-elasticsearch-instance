@@ -10,8 +10,11 @@ resource "alicloud_elasticsearch_instance" "instance" {
   data_node_disk_type  = "${var.data_node_disk_type}"
   vswitch_id           = "${var.vswitch_id}"
   password             = "${var.password}"
-  version              = "${var.version}"
+  version              = "${var.es_version}"
   count                = "${var.number_of_instance}"
   private_whitelist    = "${var.private_whitelist}"
   kibana_whitelist     = "${var.kibana_whitelist}"
+  description          = "${var.description}"
+  master_node_spec     = "${var.master_node_spec}"
+  period               = "${var.period}"
 }

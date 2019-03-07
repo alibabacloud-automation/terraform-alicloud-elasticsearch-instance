@@ -1,17 +1,11 @@
-#########################
-# Elasticsearch instance
-#########################
-
-resource "alicloud_elasticsearch_instance" "instance" {
-  instance_charge_type = "${var.instance_charge_type}"
-  data_node_amount     = "${var.data_node_amount}"
-  data_node_spec       = "${var.data_node_spec}"
-  data_node_disk_size  = "${var.data_node_disk_size}"
-  data_node_disk_type  = "${var.data_node_disk_type}"
-  vswitch_id           = "${var.vswitch_id}"
-  password             = "${var.password}"
-  version              = "${var.version}"
-  count                = "${var.number_of_instance}"
-  private_whitelist    = "${var.private_whitelist}"
-  kibana_whitelist     = "${var.kibana_whitelist}"
+module "instance" {
+  source = "../"
+  password = "MyTest@1234"
+  data_node_spec = "elasticsearch.sn2ne.large"
+  data_node_amount = "2"
+  data_node_disk_size = "20"
+  data_node_disk_type = "cloud_ssd"
+  es_version = "5.5.3_with_X-Pack"
+  vswitch_id = "vsw-uf6hser75qrlib5idurat"
+  master_node_spec = "elasticsearch.sn2ne.large"
 }

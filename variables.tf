@@ -24,7 +24,7 @@ variable "data_node_disk_type" {
   description = "The data node disk type. Supported values: cloud_ssd, cloud_efficiency."
 }
 
-variable "version" {
+variable "es_version" {
   description = "Elasticsearch version. Supported values: 5.5.3_with_X-Pack and 6.3_with_X-Pack."
 }
 
@@ -46,6 +46,16 @@ variable "kibana_whitelist" {
   type        = "list"
   description = "Set the Kibana's IP whitelist in internet network."
   default     = ["0.0.0.0/0"]
+}
+
+variable "master_node_spec" {
+  description = "The master node specifications of the Elasticsearch instance."
+  default = ""
+}
+
+variable "description" {
+  description = "The description of the Elasticsearch instance."
+  default = ""
 }
 
 variable "number_of_instance" {
