@@ -50,12 +50,12 @@ variable "kibana_whitelist" {
 
 variable "master_node_spec" {
   description = "The master node specifications of the Elasticsearch instance."
-  default = ""
+  default     = ""
 }
 
 variable "description" {
   description = "The description of the Elasticsearch instance."
-  default = ""
+  default     = ""
 }
 
 variable "number_of_instance" {
