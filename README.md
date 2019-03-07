@@ -15,17 +15,15 @@ You can use this in your terraform template with the following steps.
 
 1. Adding a module resource to your template, e.g. main.tf
 
-        resource "alicloud_elasticsearch_instance" "instance" {
-            count                = 2
-            source               = "terraform-alicloud-modules/elasticsearch-instance/alicloud"
-            vswitch_id           = "vsw-012345678abcdef"
-            instance_charge_type = "PostPaid"
-            data_node_amount     = "2"
-            data_node_spec       = "elasticsearch.sn2ne.large"
-            data_node_disk_size  = "20"
-            data_node_disk_type  = "cloud_ssd"
-            password             = "PasswordGmail@"
-            version              = "5.5.3_with_X-Pack"
+        module "instance" {
+          source = "terraform-alicloud-modules/elasticsearch-instance/alicloud"
+          password = "Your password"
+          data_node_spec = "elasticsearch.sn2ne.large"
+          data_node_amount = "2"
+          data_node_disk_size = "20"
+          data_node_disk_type = "cloud_ssd"
+          es_version = "5.5.3_with_X-Pack"
+          vswitch_id = "vswitch id"
         }
 
 2. Setting values for the following variables through environment variables:
@@ -49,10 +47,11 @@ You can use this in your terraform template with the following steps.
 |data_node_disk_type  |  The data node disk type. Supported values: `cloud_ssd`, `cloud_efficiency`.    |   string  |    ""   |    yes       |
 |vswitch_id           |  The ID of VSwitch.   |   string  |    ""   |    yes       |
 |password             |  The password of the instance. The password can be 8 to 32 characters in length and must contain three of the following conditions: uppercase letters, lowercase letters, numbers, and special characters (!@#$%^&*()_+-=).   |   string  |    ""   |    yes       |
-|version              |  Elasticsearch version. Supported values: `5.5.3_with_X-Pack` and `6.3_with_X-Pack`.  |   string  |    ""   |    yes       |
-|private_whitelist    |  Set the instance's IP whitelist in VPC network.  |   list  |    ""   |    no       |
-|kibana_whitelist     |  Set the Kibana's IP whitelist in internet network.  |   list  |    ""   |    no       |
-|master_node_spec     |  The dedicated master node spec. If specified, dedicated master node will be created.  |   string  |    ""   |    no       |
+|es_version           |  Elasticsearch version. Supported values: `5.5.3_with_X-Pack` and `6.3_with_X-Pack`.  |   string  |    ""   |    yes       |
+|private_whitelist    |  Set the instance's IP whitelist in VPC network.  |   list  |    ["0.0.0.0/0"]   |    no       |
+|kibana_whitelist     |  Set the Kibana's IP whitelist in internet network.  |   list  |    ["0.0.0.0/0"]   |    no       |
+|master_node_spec     |  The dedicated master node spec. If specified, dedicated master node will be created.  |   string  |    1   |    no       |
+|number_of_instance   |  The amount of the Elasticsearch instances.  |   int  |    1   |    no       |
 
 ## Outputs
 
