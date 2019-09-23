@@ -1,3 +1,8 @@
+variable "region" {
+  description = "The region used to launch this module resources."
+  default     = ""
+}
+
 variable "instance_charge_type" {
   description = "Valid values are PrePaid, PostPaid. Default to PostPaid"
   default     = "PostPaid"
@@ -37,13 +42,13 @@ variable "password" {
 }
 
 variable "private_whitelist" {
-  type        = "list"
+  type        = list(string)
   description = "Set the instance's IP whitelist in VPC network."
   default     = ["0.0.0.0/0"]
 }
 
 variable "kibana_whitelist" {
-  type        = "list"
+  type        = list(string)
   description = "Set the Kibana's IP whitelist in internet network."
   default     = ["0.0.0.0/0"]
 }
@@ -62,3 +67,4 @@ variable "number_of_instance" {
   description = "Instance count"
   default     = 1
 }
+

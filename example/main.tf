@@ -9,3 +9,4 @@ module "instance" {
   vswitch_id          = "vswitch id"
   master_node_spec    = "elasticsearch.sn2ne.large"
 }
+
