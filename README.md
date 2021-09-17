@@ -61,7 +61,7 @@ You can use this in your terraform template with the following steps.
 
 Authors
 -------
-Created and maintained by Guangfan Qu(@guangfanqu guangfan.qu@gmail.com)
+Created and maintained by Alibaba Cloud Terraform Team(terraform@alibabacloud.com).
 
 Reference
 ---------
