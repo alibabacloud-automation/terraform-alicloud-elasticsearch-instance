@@ -11,13 +11,13 @@ module "vpc" {
 }
 
 module "elasticsearch" {
-  source        = "../../"
-  period = var.period
+  source              = "../../"
+  period              = var.period
   password            = var.password
-  private_whitelist = var.private_whitelist
-  kibana_whitelist = var.kibana_whitelist
-  description = var.description
-  number_of_instance = var.number_of_instance
+  private_whitelist   = var.private_whitelist
+  kibana_whitelist    = var.kibana_whitelist
+  description         = var.description
+  number_of_instance  = var.number_of_instance
   data_node_spec      = var.data_node_spec
   data_node_amount    = var.data_node_amount
   data_node_disk_size = var.data_node_disk_size
