@@ -1,15 +1,3 @@
-variable "region" {
-  description = "(Deprecated from version 1.2.0) The region used to launch this module resources."
-  type        = string
-  default     = ""
-}
-
-variable "number_of_instance" {
-  description = "Instance count"
-  type        = number
-  default     = 1
-}
-
 variable "instance_charge_type" {
   description = "Valid values are PrePaid, PostPaid. Default to PostPaid"
   type        = string
@@ -46,22 +34,10 @@ variable "data_node_disk_type" {
   default     = "cloud_efficiency"
 }
 
-variable "vswitch_id" {
-  description = "The ID of VSwitch."
-  type        = string
-  default     = ""
-}
-
 variable "password" {
   description = "The password of the instance."
   type        = string
-  default     = ""
-}
-
-variable "es_version" {
-  description = "Elasticsearch version. Supported values: 5.5.3_with_X-Pack and 6.3_with_X-Pack."
-  type        = string
-  default     = "5.5.3_with_X-Pack"
+  default     = "YourPassword123!"
 }
 
 variable "private_whitelist" {
@@ -85,5 +61,5 @@ variable "master_node_spec" {
 variable "description" {
   description = "The description of the Elasticsearch instance."
   type        = string
-  default     = ""
+  default     = "tf-description"
 }

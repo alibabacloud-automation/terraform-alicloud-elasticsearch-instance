@@ -1,9 +1,9 @@
 variable "instance_charge_type" {
-  default     = "PostPaid"
+  default = "PostPaid"
 }
 
 variable "period" {
-  default     = "1"
+  default = "1"
 }
 
 variable "data_node_spec" {
@@ -28,7 +28,7 @@ variable "es_version" {
 
 variable "vswitch_id" {
   description = "The ID of VSwitch."
-  default = ""
+  default     = ""
 }
 
 variable "password" {
@@ -36,24 +36,24 @@ variable "password" {
 }
 
 variable "private_whitelist" {
-  type        = list(string)
-  default     = ["0.0.0.0/0"]
+  type    = list(string)
+  default = ["0.0.0.0/0"]
 }
 
 variable "kibana_whitelist" {
-  type        = list(string)
-  default     = ["0.0.0.0/0"]
+  type    = list(string)
+  default = ["0.0.0.0/0"]
 }
 
 variable "master_node_spec" {
-  default     = ""
+  default = ""
 }
 
 variable "description" {
-  default     = ""
+  default = ""
 }
 
 variable "number_of_instance" {
-  default     = 1
+  default = 1
 }
 
