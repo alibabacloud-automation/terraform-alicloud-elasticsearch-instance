@@ -19,7 +19,7 @@ variable "data_node_amount" {
 variable "data_node_spec" {
   description = "The data node specifications of the Elasticsearch instance."
   type        = string
-  default     = "elasticsearch.sn1ne.large"
+  default     = "elasticsearch.sn2ne.large"
 }
 
 variable "data_node_disk_size" {
@@ -31,7 +31,7 @@ variable "data_node_disk_size" {
 variable "data_node_disk_type" {
   description = "The data node disk type. Supported values: cloud_ssd, cloud_efficiency."
   type        = string
-  default     = "cloud_efficiency"
+  default     = "cloud_ssd"
 }
 
 variable "password" {
@@ -55,11 +55,23 @@ variable "kibana_whitelist" {
 variable "master_node_spec" {
   description = "The master node specifications of the Elasticsearch instance."
   type        = string
-  default     = "elasticsearch.sn2ne.large"
+  default     = null
 }
 
 variable "description" {
   description = "The description of the Elasticsearch instance."
   type        = string
   default     = "tf-description"
+}
+
+variable "data_node_disk_performance_level" {
+  description = "The description of the Elasticsearch instance."
+  type        = string
+  default     = "PL1"
+}
+
+variable "kibana_node_spec" {
+  description = "The description of the Elasticsearch instance."
+  type        = string
+  default     = "elasticsearch.sn2ne.large"
 }

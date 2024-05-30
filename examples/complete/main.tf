@@ -14,18 +14,20 @@ module "example" {
 
   number_of_instance = 1
 
-  instance_charge_type = var.instance_charge_type
-  period               = var.period
-  data_node_amount     = var.data_node_amount
-  data_node_spec       = var.data_node_spec
-  data_node_disk_size  = var.data_node_disk_size
-  data_node_disk_type  = var.data_node_disk_type
-  vswitch_id           = module.vpc.this_vswitch_ids[0]
-  password             = var.password
-  es_version           = "5.5.3_with_X-Pack"
-  private_whitelist    = var.private_whitelist
-  kibana_whitelist     = var.kibana_whitelist
-  master_node_spec     = var.master_node_spec
-  description          = var.description
+  instance_charge_type             = var.instance_charge_type
+  period                           = var.period
+  data_node_amount                 = var.data_node_amount
+  data_node_spec                   = var.data_node_spec
+  data_node_disk_size              = var.data_node_disk_size
+  data_node_disk_type              = var.data_node_disk_type
+  vswitch_id                       = module.vpc.this_vswitch_ids[0]
+  password                         = var.password
+  es_version                       = "7.10_with_X-Pack"
+  private_whitelist                = var.private_whitelist
+  kibana_whitelist                 = var.kibana_whitelist
+  master_node_spec                 = var.master_node_spec
+  description                      = var.description
+  data_node_disk_performance_level = var.data_node_disk_performance_level
+  kibana_node_spec                 = var.kibana_node_spec
 
 }

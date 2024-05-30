@@ -87,3 +87,15 @@ variable "description" {
   type        = string
   default     = ""
 }
+
+variable "data_node_disk_performance_level" {
+  description = "Cloud disk performance level. Valid values are `PL0`, `PL1`, `PL2`, `PL3`. The `data_node_disk_type` muse be `cloud_essd`."
+  type        = string
+  default     = null
+}
+
+variable "kibana_node_spec" {
+  description = "The kibana node specifications of the Elasticsearch instance."
+  type        = string
+  default     = null
+}
