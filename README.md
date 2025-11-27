@@ -11,20 +11,29 @@ Root module calls these modules which can also be used separately to create inde
 
 Usage
 -----
+
+<div style="display: block;margin-bottom: 40px;"><div class="oics-button" style="float: right;position: absolute;margin-bottom: 10px;">
+  <a href="https://api.aliyun.com/terraform?source=Module&activeTab=document&sourcePath=terraform-alicloud-modules%3A%3Aelasticsearch-instance&spm=docs.m.terraform-alicloud-modules.elasticsearch-instance&intl_lang=EN_US" target="_blank">
+    <img alt="Open in AliCloud" src="https://img.alicdn.com/imgextra/i1/O1CN01hjjqXv1uYUlY56FyX_!!6000000006049-55-tps-254-36.svg" style="max-height: 44px; max-width: 100%;">
+  </a>
+</div></div>
+
 You can use this in your terraform template with the following steps.
 
 1. Adding a module resource to your template, e.g. main.tf
 
-        module "instance" {
-          source = "terraform-alicloud-modules/elasticsearch-instance/alicloud"
-          password = "Your password"
-          data_node_spec = "elasticsearch.sn2ne.large"
-          data_node_amount = "2"
-          data_node_disk_size = "20"
-          data_node_disk_type = "cloud_ssd"
-          es_version = "5.5.3_with_X-Pack"
-          vswitch_id = "vswitch id"
-        }
+```hcl
+module "instance" {
+   source = "terraform-alicloud-modules/elasticsearch-instance/alicloud"
+   password = "Your password"
+   data_node_spec = "elasticsearch.sn2ne.large"
+   data_node_amount = "2"
+   data_node_disk_size = "20"
+   data_node_disk_type = "cloud_ssd"
+   es_version = "5.5.3_with_X-Pack"
+   vswitch_id = "vswitch id"
+}
+```
 
 2. Setting values for the following variables through environment variables:
 
