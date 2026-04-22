@@ -1,8 +1,3 @@
-variable "region" {
-  description = "(Deprecated from version 1.2.0) The region used to launch this module resources."
-  type        = string
-  default     = ""
-}
 
 variable "number_of_instance" {
   description = "Instance count"

@@ -1,3 +1,4 @@
 output "elasticsearch_ids" {
-  value = module.example.this_elasticsearch_ids
+  description = "The id of elasticsearch instance"
+  value       = module.example.this_elasticsearch_ids
 }
